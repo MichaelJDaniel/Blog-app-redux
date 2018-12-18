@@ -1,15 +1,20 @@
-import React, { Component } from 'react';
-import BlogForm from './components/BlogForm';
-import BlogList from './components/BlogList';
-import Footer from './components/Footer'
+import React from 'react';
+import { Switch, Route } from 'react-router-dom'
+import Home from './components/Home';
+import Blogs from './components/Blogs'
+// import NavBar from './components/NavBar'
 import './App.css';
+import BlogForm from './components/BlogForm';
 
-const App = () => {
-  <Switch>
-    <Route exact path="/" component={Home}/>
-    <Route exact path="/blog/:id" component={Blog}/>
-  </Switch>
-   
-  
-}
+const App = () => (
+  <>
+  {/* <NavBar/> */}
+    
+      <Switch>
+      <Route exact path="/" component={BlogForm}/>
+      <Route exact path="/blog/:id" component={Blogs}/>
+      </Switch>
+    
+  </>
+  )
 export default App;
